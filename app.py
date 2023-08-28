@@ -3,6 +3,7 @@ import pandas as pd
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import json
+import requests 
 
 
 
@@ -200,7 +201,6 @@ dict_seasons={'Kharif':1, 'Whole Year':2, 'Autumn':3, 'Rabi':4,
 
 @app.route('/production',methods=['POST'])
 def production():
-    import requests 
     data = request.json
     state = data['statename']
     district = data['districtname']
